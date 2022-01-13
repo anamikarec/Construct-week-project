@@ -9,46 +9,76 @@ import {
 } from "../redux/app/action";
 import { getTodos } from "./api";
 
-function TodoItem({ event_name, event_place }) {
+function TodoItem({ img_url, date, attendees, event_name, event_place }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        padding: "1rem",
-        gap: "2rem",
-        border: "1px solid gray",
-        borderRadius: "20px",
-        background: "green",
-        margin: "20px"
-      }}
-    >
+    <div>
       <div
         style={{
-          background: "black",
-          padding: "10px",
-          fontSize: "17px",
-          color: "white",
-          border: "2px solid blue",
-          borderRadius: "10px",
-          margin: "10px"
+          display: "flex",
+          padding: "1rem",
+          width: "50%",
+          borderTop: "1px solid grey"
         }}
       >
-        {event_name}
-      </div>
-      <div
-        style={{
-          background: "black",
-          padding: "10px",
-          fontSize: "17px",
-          color: "white",
-          border: "2px solid blue",
-          borderRadius: "10px",
-          margin: "10px"
-        }}
-      >
-        {event_place}
+        <div>
+          <img
+            src={img_url}
+            alt="img"
+            height="100"
+            width="150"
+            style={{
+              borderRadius: "10px",
+              marginTop: "10px",
+              marginRight: "10px"
+            }}
+          />
+        </div>
+        <div style={{ textAlign: "left" }}>
+          <h3>{date}</h3>
+          <p>{event_name}</p>
+          <p>{event_place}</p>
+          <p>{attendees} attendees</p>
+        </div>
       </div>
     </div>
+    // <div
+    //   style={{
+    //     display: "flex",
+    //     padding: "1rem",
+    //     gap: "2rem",
+    //     border: "1px solid gray",
+    //     borderRadius: "20px",
+    //     background: "green",
+    //     margin: "20px"
+    //   }}
+    // >
+    // <div
+    //   style={{
+    //     background: "black",
+    //     padding: "10px",
+    //     fontSize: "17px",
+    //     color: "white",
+    //     border: "2px solid blue",
+    //     borderRadius: "10px",
+    //     margin: "10px"
+    //   }}
+    // >
+    // {event_name}
+    //   </div>
+    //   <div
+    //     style={{
+    //       background: "black",
+    //       padding: "10px",
+    //       fontSize: "17px",
+    //       color: "white",
+    //       border: "2px solid blue",
+    //       borderRadius: "10px",
+    //       margin: "10px"
+    //     }}
+    //   >
+    //     {event_place}
+    //   </div>
+    // </div>
   );
 }
 
